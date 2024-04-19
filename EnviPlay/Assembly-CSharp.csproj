@@ -65,7 +65,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\CarteData.cs" />
-    <Compile Include="Assets\Scenetest.cs" />
+    <Compile Include="Assets\Scripts\Scenetest.cs" />
+    <Compile Include="Assets\Scripts\Carte.cs" />
+    <Compile Include="Assets\Scripts\Category Choice.cs" />
     <Compile Include="Assets\Scripts\StartGame.cs" />
   </ItemGroup>
   <ItemGroup>

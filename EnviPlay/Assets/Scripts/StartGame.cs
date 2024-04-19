@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class CategorySelection : MonoBehaviour
 {
@@ -28,5 +29,6 @@ public class CategorySelection : MonoBehaviour
     {
         // Faire quelque chose avec les catégories sélectionnées, comme charger les questions correspondantes
         Debug.Log("Démarre la partie avec les catégories sélectionnées : Transport = " + transport + ", Lieux = " + location + ", Aléatoire = " + random);
+        SceneManager.LoadSceneAsync("InGame");
     }
 }
