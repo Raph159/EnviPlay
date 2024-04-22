@@ -8,18 +8,21 @@ public class DeplacementCartes : MonoBehaviour
     public GameObject carte2;
     public GameObject carte3;
     public GameObject cartePrefab;
+    public GameObject parentObject;
     public float vitesseDeplacement = 500f; // Vitesse de déplacement des cartes
-    public float distanceDeplacement = 550f; // Distance de déplacement égale à la largeur d'une carte
+    public float distanceDeplacement = 551f; // Distance de déplacement égale à la largeur d'une carte
 
     private bool deplacementEnCours = false;
 
     private float positionInitialeX;
+    private Vector3 positionInit3;
 
 
     void Start()
     {
         Debug.Log("Position initiale de la carte 1 : " + carte1.transform.position);
         positionInitialeX = carte1.transform.position.x;
+        positionInit3 = carte3.transform.position;
     }
 
     void Update()
@@ -45,7 +48,29 @@ public class DeplacementCartes : MonoBehaviour
             // Réinitialiser la position des cartes
             deplacementEnCours = false;
             positionInitialeX = carte1.transform.position.x;
-            GameObject test = Instantiate(cartePrefab, new Vector3(0,0,0), Quaternion.identity);
+
+            Transform parentTransform = parentObject.transform;
+
+            int insertionIndex = parentTransform.childCount - 1; // l'index de l'avant-dernier enfant
+            insertionIndex = Mathf.Clamp(insertionIndex, 0, parentTransform.childCount); // assurez-vous que l'index est valide
+            insertionIndex = Mathf.Max(0, insertionIndex); // assurez-vous que l'index est positif
+            insertionIndex -= 1; // déplacez-vous à l'avant-dernière place
+
+            GameObject test = Instantiate(cartePrefab, positionInit3, Quaternion.identity,parentObject.transform);
+
+            test.transform.SetSiblingIndex(insertionIndex);
+
+            GameObject temp = carte1;
+
+            carte1 = carte2;
+
+            positionInitialeX = carte1.transform.position.x;
+
+            carte2 = carte3;
+            
+            carte3 = test;
+
+            Destroy(temp);
         }
     }
 
