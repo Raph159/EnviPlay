@@ -31,4 +31,9 @@ public class CategorySelection : MonoBehaviour
         Debug.Log("Démarre la partie avec les catégories sélectionnées : Transport = " + transport + ", Lieux = " + location + ", Aléatoire = " + random);
         SceneManager.LoadSceneAsync("InGame");
     }
+
+    public void OpenCreditScene()
+    {
+        SceneManager.LoadSceneAsync("CreditScene");
+    }
 }
