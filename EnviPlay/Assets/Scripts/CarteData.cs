@@ -7,5 +7,5 @@ public class CarteData : ScriptableObject
 {
     public string nom;
     public Sprite visuel;
-    public int impactCO2;
+    public float impactCO2;
 }
