@@ -9,6 +9,7 @@ public class DeplacementCartes : MonoBehaviour
     public GameObject carte3;
     public GameObject cartePrefab;
     public GameObject parentObject;
+    public GameObject moreOrLess;
     public float vitesseDeplacement = 500f; // Vitesse de déplacement des cartes
     public float distanceDeplacement = 0f; // Distance de déplacement égale à la largeur d'une carte
 
