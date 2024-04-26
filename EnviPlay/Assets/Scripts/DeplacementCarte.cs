@@ -10,7 +10,7 @@ public class DeplacementCartes : MonoBehaviour
     public GameObject cartePrefab;
     public GameObject parentObject;
     public float vitesseDeplacement = 500f; // Vitesse de déplacement des cartes
-    public float distanceDeplacement = 551f; // Distance de déplacement égale à la largeur d'une carte
+    public float distanceDeplacement = 0f; // Distance de déplacement égale à la largeur d'une carte
 
     private bool deplacementEnCours = false;
 
@@ -23,6 +23,7 @@ public class DeplacementCartes : MonoBehaviour
         Debug.Log("Position initiale de la carte 1 : " + carte1.transform.position);
         positionInitialeX = carte1.transform.position.x;
         positionInit3 = carte3.transform.position;
+        distanceDeplacement = (Screen.width)/2;
     }
 
     void Update()
