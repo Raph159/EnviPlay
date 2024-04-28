@@ -1,6 +1,4 @@
-using System.Runtime.CompilerServices;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class DeplacementCartes : MonoBehaviour
 {
@@ -80,5 +78,5 @@ public class DeplacementCartes : MonoBehaviour
     {
         deplacementEnCours = true;
     }
-
+    
 }

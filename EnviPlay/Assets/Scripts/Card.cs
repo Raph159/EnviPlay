@@ -18,4 +18,8 @@ public class Card : MonoBehaviour
         image.sprite = carteData.visuel;
         impactC02.text = carteData.impactCO2.ToString() + " gCO2";
     }
+    public float GetImpactC02()
+    {
+        return carteData.impactCO2;
+    }
 }
