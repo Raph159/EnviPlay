@@ -1,13 +1,11 @@
-using Unity.VisualScripting;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class ButtonPress : MonoBehaviour
 {
     public GameObject carte1;
-    private Card instanceCarte1;
     public GameObject carte2;
-    private Card instanceCarte2;
     public GameObject carte3;
     public GameObject cartePrefab;
     public GameObject parentObject;
@@ -23,6 +21,9 @@ public class ButtonPress : MonoBehaviour
     private float positionInitialeX;
     private Vector3 positionInit3;
 
+    public List<CarteData> cartes;
+    private int index;
+
 
     void Start()
     {
@@ -31,17 +32,13 @@ public class ButtonPress : MonoBehaviour
         positionInit3 = carte3.transform.position;
         distanceDeplacement = (Screen.width)/2;
         vitesseDeplacement = distanceDeplacement/2;
-
-        //Valeur pour la comparaison
-        instanceCarte1 = carte1.GetComponent<Card>();
-        instanceCarte2 = carte2.GetComponent<Card>();
     }
 
     void Update()
     {
         if (plus)
         {
-            if (instanceCarte2.GetImpactC02() >= instanceCarte1.GetImpactC02())
+            if (carte2.GetComponent<Card>().GetImpactC02() >= carte1.GetComponent<Card>().GetImpactC02())
             {
                 Debug.Log("Bien vu");
                 
@@ -51,8 +48,6 @@ public class ButtonPress : MonoBehaviour
                 boutonMoins.SetActive(false);
 
                 DeplacerCartes(ref plus);
-            
-                
             }
             else
             {
@@ -62,7 +57,7 @@ public class ButtonPress : MonoBehaviour
         }
         else if(moins)
         {
-            if (instanceCarte2.GetImpactC02() <= instanceCarte1.GetImpactC02())
+            if (carte2.GetComponent<Card>().GetImpactC02() <= carte1.GetComponent<Card>().GetImpactC02())
             {
                 Debug.Log("Bien vu");
                 
@@ -98,6 +93,7 @@ public class ButtonPress : MonoBehaviour
             button = false;
         }
     }
+
     public void FinDeplacement()
     {
         //deplacementEnCours = false;
@@ -108,26 +104,24 @@ public class ButtonPress : MonoBehaviour
         int insertionIndex = parentTransform.childCount - 1; // l'index de l'avant-dernier enfant
         insertionIndex = Mathf.Clamp(insertionIndex, 0, parentTransform.childCount); // assurez-vous que l'index est valide
         insertionIndex = Mathf.Max(0, insertionIndex); // assurez-vous que l'index est positif
-        insertionIndex -= 1; // déplacez-vous à l'avant-dernière place
+        insertionIndex -= 0; // déplacez-vous à l'avant-dernière place
 
+        
+        int index = Random.Range(0,cartes.Count);
+        
         GameObject test = Instantiate(cartePrefab, positionInit3, Quaternion.identity,parentObject.transform);
 
+        test.GetComponent<Card>().carteData = cartes[index];
+        
         test.transform.SetSiblingIndex(insertionIndex);
 
         GameObject temp = carte1;
-
         carte1 = carte2;
-
         positionInitialeX = carte1.transform.position.x;
-
         carte2 = carte3;
-            
         carte3 = test;
 
         Destroy(temp);
-
-        instanceCarte1 = carte1.GetComponent<Card>();
-        instanceCarte2 = carte2.GetComponent<Card>();
 
         boutonPlus.GetComponent<Image>().enabled = true;
         boutonPlus.SetActive(true);
@@ -142,4 +136,5 @@ public class ButtonPress : MonoBehaviour
     {
         moins = true;
     }
+
 }
