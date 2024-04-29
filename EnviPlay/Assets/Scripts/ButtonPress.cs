@@ -42,6 +42,7 @@ public class ButtonPress : MonoBehaviour
         int index = Random.Range(0,cartes.Count-1);
         carte1 = Instantiate(cartePrefab, new Vector3((Screen.width)*(0.25f),Screen.height/2,0), Quaternion.identity,parentObject.transform);
         carte1.GetComponent<Card>().carteData = cartes[index];
+        carte1.transform.GetChild(2).gameObject.SetActive(true); // Afficher l'impact CO2
         carte1.transform.SetSiblingIndex(0);
         cartes.RemoveAt(index);
 
@@ -50,6 +51,7 @@ public class ButtonPress : MonoBehaviour
         carte2 = Instantiate(cartePrefab, new Vector3((Screen.width)*(0.75f),Screen.height/2,0), Quaternion.identity,parentObject.transform);
         carte2.GetComponent<Card>().carteData = cartes[index];
         carte2.transform.SetSiblingIndex(1);
+
         cartes.RemoveAt(index);
     }
 
@@ -101,6 +103,7 @@ public class ButtonPress : MonoBehaviour
         float deplacement = vitesseDeplacement * Time.deltaTime;
         if(carte33Cree == false)
         {
+            carte2.transform.GetChild(2).gameObject.SetActive(true);
             DesacButton();
             Debug.Log("Bien vu");
             CreationCarte3();
