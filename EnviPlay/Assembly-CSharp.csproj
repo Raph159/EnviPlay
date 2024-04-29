@@ -68,7 +68,6 @@
     <Compile Include="Assets\Scripts\BackgroundControl_0.cs" />
     <Compile Include="Assets\Scripts\Scenetest.cs" />
     <Compile Include="Assets\Scripts\Card.cs" />
-    <Compile Include="Assets\Scripts\DeplacementCarte.cs" />
     <Compile Include="Assets\Scripts\ParallaxBackground_0.cs" />
     <Compile Include="Assets\Scripts\ButtonPress.cs" />
     <Compile Include="Assets\Scripts\Category Choice.cs" />
