@@ -16,7 +16,7 @@ public class Card : MonoBehaviour
         // Envoi des données du ScriptableObject aux éléments de UI
         nameText.text = carteData.nom;
         image.sprite = carteData.visuel;
-        impactC02.text = carteData.impactCO2.ToString() + " gCO2";
+        impactC02.text = carteData.impactCO2.ToString();
     }
     public float GetImpactC02()
     {

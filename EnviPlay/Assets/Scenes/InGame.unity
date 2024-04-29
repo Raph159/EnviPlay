@@ -506,7 +506,6 @@ GameObject:
   - component: {fileID: 917473206}
   - component: {fileID: 917473205}
   - component: {fileID: 917473204}
-  - component: {fileID: 917473207}
   m_Layer: 5
   m_Name: Button More
   m_TagString: Untagged
@@ -627,29 +626,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 917473202}
   m_CullTransparentMesh: 0
---- !u!114 &917473207
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 917473202}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4abb9ca19b12edb42b3eacf8ee52b914, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  carte1: {fileID: 0}
-  carte2: {fileID: 0}
-  carte3: {fileID: 0}
-  cartePrefab: {fileID: 5081940164661753240, guid: 512044b2ba26730498d5ea97f6393a20, type: 3}
-  parentObject: {fileID: 133592817}
-  moreOrLess: {fileID: 263808162}
-  vitesseDeplacement: 500
-  distanceDeplacement: 0
-  deplacementEnCours: 0
-  positionInitialeX: 0
-  positionInit3: {x: 0, y: 0, z: 0}
 --- !u!1 &1210309349
 GameObject:
   m_ObjectHideFlags: 0

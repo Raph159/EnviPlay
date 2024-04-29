@@ -4,11 +4,12 @@ using UnityEngine.UI;
 
 public class ButtonPress : MonoBehaviour
 {
-    public List<CarteData> cartes; //Liste des cartes
+    private List<CarteData> cartes; //Liste des cartes
+    private GameManager gameManager; //Object contenant les cartes de la bonne catégorie
     private GameObject carte1; // Carte 1 active dans le jeu
     private GameObject carte2; // Carte 2 active dans le jeu
     private GameObject carte3; // Carte 3 active dans le jeu
-    public GameObject cartePrefab; // Prefab pour instancier les cartes
+    private GameObject cartePrefab; // Prefab pour instancier les cartes
     public GameObject parentObject; // Game Object parent pour définir le placement des cartes
     public GameObject boutonPlus; // Bouton plus
     public GameObject boutonMoins; // Bouton moins
@@ -29,6 +30,13 @@ public class ButtonPress : MonoBehaviour
         //Etat de la partie
         distanceDeplacement = (Screen.width)/2;
         vitesseDeplacement = distanceDeplacement/2;
+
+        gameManager = FindObjectOfType<GameManager>();
+        if (gameManager != null)
+        {
+            cartes = gameManager.selectedQuestions;
+            cartePrefab = gameManager.prefab;
+        }
 
         //Création carte 1
         int index = Random.Range(0,cartes.Count-1);
