@@ -1,10 +1,12 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ButtonPress : MonoBehaviour
 {
-    private List<CarteData> cartes; //Liste des cartes
+    public List<CarteData> cartes; //Liste des cartes
     private GameManager gameManager; //Object contenant les cartes de la bonne catégorie
     private GameObject carte1; // Carte 1 active dans le jeu
     private GameObject carte2; // Carte 2 active dans le jeu
@@ -13,6 +15,10 @@ public class ButtonPress : MonoBehaviour
     public GameObject parentObject; // Game Object parent pour définir le placement des cartes
     public GameObject boutonPlus; // Bouton plus
     public GameObject boutonMoins; // Bouton moins
+    public TextMeshProUGUI scoreText;
+    public GameObject endgame;
+    public GameObject boutonRetry;
+    public GameObject boutonBackMenu;
     //Mouvement
     private float vitesseDeplacement; // Vitesse de déplacement des cartes
     private float distanceDeplacement; // Distance de déplacement égale à la largeur d'une carte
@@ -24,6 +30,8 @@ public class ButtonPress : MonoBehaviour
     private bool moins = false; // Savoir si le bouton moins est activé
     private bool carte33Cree = false; // Savoir si la carte3 a été crée
     private bool derniereCarte = false; // Savoir si on est à la dernière carte du jeu
+    public int score = 0;
+
 
     void Start()
     {
@@ -34,7 +42,7 @@ public class ButtonPress : MonoBehaviour
         gameManager = FindObjectOfType<GameManager>();
         if (gameManager != null)
         {
-            cartes = gameManager.selectedQuestions;
+            cartes = new List<CarteData>(gameManager.selectedQuestions);
             cartePrefab = gameManager.prefab;
         }
 
@@ -53,6 +61,9 @@ public class ButtonPress : MonoBehaviour
         carte2.transform.SetSiblingIndex(1);
 
         cartes.RemoveAt(index);
+
+        //Set score à 0
+        scoreText.text = "Score: " + score.ToString();
     }
 
     void Update()
@@ -63,7 +74,9 @@ public class ButtonPress : MonoBehaviour
             {
                 if (cartes.Count == 0 && derniereCarte)
                 {
+                    actuScore();
                     Debug.Log("You win the game");
+                    EndGame(true);
                     plus = false;
                 }
                 else
@@ -74,6 +87,7 @@ public class ButtonPress : MonoBehaviour
             else
             {
                 Debug.Log("You Lose");
+                EndGame(false);
                 plus = false;
             }
         }
@@ -83,7 +97,9 @@ public class ButtonPress : MonoBehaviour
             {
                 if (cartes.Count == 0 && derniereCarte)
                 {
+                    actuScore();
                     Debug.Log("You win the game");
+                    EndGame(true);
                     moins = false;
                 }
                 else
@@ -94,6 +110,7 @@ public class ButtonPress : MonoBehaviour
             else
             {
                 Debug.Log("You Lose");
+                EndGame(false);
                 moins = false;
             }
         }
@@ -127,7 +144,7 @@ public class ButtonPress : MonoBehaviour
     }
     public void FinDeplacement()
     {
-
+        actuScore();
         GameObject temp = carte1;
         carte1 = carte2;
         carte2 = carte3;
@@ -137,17 +154,11 @@ public class ButtonPress : MonoBehaviour
     }
     private void CreationCarte3()
     {
-        Transform parentTransform = parentObject.transform;
-        int insertionIndex = parentTransform.childCount - 1; // l'index de l'avant-dernier enfant
-        insertionIndex = Mathf.Clamp(insertionIndex, 0, parentTransform.childCount); // assurez-vous que l'index est valide
-        insertionIndex = Mathf.Max(0, insertionIndex); // assurez-vous que l'index est positif
-        //insertionIndex -= 0; // déplacez-vous à l'avant-dernière place
-
         int index = Random.Range(0,cartes.Count);
 
         carte3 = Instantiate(cartePrefab, positionInit3, Quaternion.identity,parentObject.transform);
         carte3.GetComponent<Card>().carteData = cartes[index];
-        carte3.transform.SetSiblingIndex(insertionIndex);
+        carte3.transform.SetSiblingIndex(2);
 
         cartes.RemoveAt(index);
     }
@@ -164,6 +175,39 @@ public class ButtonPress : MonoBehaviour
         boutonPlus.SetActive(true);
         boutonMoins.GetComponent<Image>().enabled = true;
         boutonMoins.SetActive(true);
+    }
+    private void actuScore()
+    {
+        score +=1;
+        scoreText.text = "Score: " + score.ToString();
+    }
+    private void EndGame(bool win)
+    {
+        DesacButton();
+        gameManager.setBestScore(score);
+        boutonBackMenu.SetActive(true);
+        boutonRetry.SetActive(true);
+        TextMeshProUGUI textEndgame = endgame.GetComponent<TextMeshProUGUI>();
+        if (win)
+        {
+            textEndgame.text = "You win";
+            endgame.SetActive(true);
+        }
+        else
+        {
+            textEndgame.text = "Lose";
+            endgame.SetActive(true);
+        }
+    }
+    public void Replay()
+    {
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        cartes = gameManager.selectedQuestions;
+        SceneManager.LoadScene(currentSceneName);
+    }
+    public void BackMenu()
+    {
+        SceneManager.LoadScene("Main Menu");
     }
     public void ButtonPlus()
     {

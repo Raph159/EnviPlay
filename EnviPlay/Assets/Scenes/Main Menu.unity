@@ -296,6 +296,7 @@ MonoBehaviour:
   transportToggle: {fileID: 0}
   locationToggle: {fileID: 0}
   randomToggle: {fileID: 0}
+  gameManagerPrefab: {fileID: 0}
   prefabTransport: {fileID: 0}
   lTransport: []
   prefabLieux: {fileID: 0}
@@ -1858,56 +1859,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &1176214592
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1176214593}
-  - component: {fileID: 1176214594}
-  m_Layer: 5
-  m_Name: GameManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1176214593
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1176214592}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 571, y: 343.5}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1176214594
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1176214592}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4b8f4d422817c0488e42fced4f062d9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  selectedQuestions: []
-  prefab: {fileID: 0}
 --- !u!1 &1591900295
 GameObject:
   m_ObjectHideFlags: 0
@@ -2415,6 +2366,7 @@ MonoBehaviour:
   transportToggle: {fileID: 1848352027}
   locationToggle: {fileID: 486548392}
   randomToggle: {fileID: 61235719}
+  gameManagerPrefab: {fileID: 4240993475213577251, guid: 6bb5c8e6c07049b4cb616d9d3a567480, type: 3}
   prefabTransport: {fileID: 3821418209540584009, guid: 2aa175dd906cf8042bb6670d1d597b01, type: 3}
   lTransport:
   - {fileID: 11400000, guid: 5dbf568ebe06a804395f3e9f95716084, type: 2}
@@ -2521,7 +2473,6 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 2049014344}
-  - {fileID: 1176214593}
   - {fileID: 715202817}
   - {fileID: 2102045399}
   - {fileID: 103491133}
