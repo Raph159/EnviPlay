@@ -13,8 +13,8 @@ public class ButtonPress : MonoBehaviour
     private GameObject carte3; // Carte 3 active dans le jeu
     private GameObject cartePrefab; // Prefab pour instancier les cartes
     public GameObject parentObject; // Game Object parent pour définir le placement des cartes
-    public GameObject boutonPlus; // Bouton plus
-    public GameObject boutonMoins; // Bouton moins
+    public Button boutonPlus; // Bouton plus
+    public Button boutonMoins; // Bouton moins 
     public TextMeshProUGUI scoreText;
     public GameObject endgame;
     public GameObject boutonRetry;
@@ -50,6 +50,7 @@ public class ButtonPress : MonoBehaviour
         int index = Random.Range(0,cartes.Count-1);
         carte1 = Instantiate(cartePrefab, new Vector3((Screen.width)*(0.25f),Screen.height/2,0), Quaternion.identity,parentObject.transform);
         carte1.GetComponent<Card>().carteData = cartes[index];
+
         carte1.transform.GetChild(2).gameObject.SetActive(true); // Afficher l'impact CO2
         carte1.transform.SetSiblingIndex(0);
         cartes.RemoveAt(index);
@@ -165,16 +166,16 @@ public class ButtonPress : MonoBehaviour
     private void DesacButton()
     {
         boutonPlus.GetComponent<Image>().enabled = false;
-        boutonPlus.SetActive(false);
+        boutonPlus.enabled = false;
         boutonMoins.GetComponent<Image>().enabled = false;
-        boutonMoins.SetActive(false);
+        boutonMoins.enabled = false;
     }
     private void ActiButton()
     {
         boutonPlus.GetComponent<Image>().enabled = true;
-        boutonPlus.SetActive(true);
+        boutonPlus.enabled = true;
         boutonMoins.GetComponent<Image>().enabled = true;
-        boutonMoins.SetActive(true);
+        boutonMoins.enabled = true;
     }
     private void actuScore()
     {
@@ -212,9 +213,13 @@ public class ButtonPress : MonoBehaviour
     public void ButtonPlus()
     {
         plus = true;
+        boutonPlus.enabled = false;
+        boutonPlus.enabled = true;
     }
     public void ButtonMoins()
     {
         moins = true;
+        boutonMoins.enabled = false;
+        boutonMoins.enabled = true;
     }
 }

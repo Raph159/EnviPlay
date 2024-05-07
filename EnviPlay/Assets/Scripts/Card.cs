@@ -17,6 +17,7 @@ public class Card : MonoBehaviour
         nameText.text = carteData.nom;
         image.sprite = carteData.visuel;
         impactC02.text = carteData.impactCO2.ToString();
+        image.GetComponent<Image>().color = new Color32(255, 255, 225, 70);
     }
     public float GetImpactC02()
     {
