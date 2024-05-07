@@ -185,6 +185,7 @@ public class ButtonPress : MonoBehaviour
     private void EndGame(bool win)
     {
         DesacButton();
+        carte2.transform.GetChild(2).gameObject.SetActive(true);
         gameManager.setBestScore(score);
         boutonBackMenu.SetActive(true);
         boutonRetry.SetActive(true);
