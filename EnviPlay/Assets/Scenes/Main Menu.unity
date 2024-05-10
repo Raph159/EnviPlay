@@ -387,7 +387,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 25.4
+  m_fontSize: 29.95
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1202,7 +1202,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 47.6
+  m_fontSize: 54.55
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2369,9 +2369,26 @@ MonoBehaviour:
   gameManagerPrefab: {fileID: 4240993475213577251, guid: 6bb5c8e6c07049b4cb616d9d3a567480, type: 3}
   prefabTransport: {fileID: 3821418209540584009, guid: 2aa175dd906cf8042bb6670d1d597b01, type: 3}
   lTransport:
+  - {fileID: 11400000, guid: 9978c2198af2b814bbe6ecbc1d2e66c7, type: 2}
+  - {fileID: 11400000, guid: 1cb6e6b05851f88478d92805270a77e3, type: 2}
+  - {fileID: 11400000, guid: 42e5ba031928a7049bc413dcacbc0f0c, type: 2}
+  - {fileID: 11400000, guid: 034a5f3f158a1cc47ac91f7cf1d1c5e2, type: 2}
+  - {fileID: 11400000, guid: b4279937f69d0424485fe3695c0fbaf0, type: 2}
+  - {fileID: 11400000, guid: 40fc034abf77612499a05e54e287d366, type: 2}
+  - {fileID: 11400000, guid: b948835534676bb4a823da9bc6c5c7e5, type: 2}
+  - {fileID: 11400000, guid: 218b48605b7893d4ba321c33789731e1, type: 2}
   - {fileID: 11400000, guid: 5dbf568ebe06a804395f3e9f95716084, type: 2}
+  - {fileID: 11400000, guid: 4a215845cf3279e48ae2c879526e8066, type: 2}
+  - {fileID: 11400000, guid: 330869e8a25a86a49916fd67c8821986, type: 2}
+  - {fileID: 11400000, guid: fa171f37ffc00b04bb1633aa9aed8ef4, type: 2}
+  - {fileID: 11400000, guid: 3ae6f02486b5c594da29bd810f050711, type: 2}
   - {fileID: 11400000, guid: 7247f26ce430c5d4193a8605c1dd69a1, type: 2}
+  - {fileID: 11400000, guid: f405ccbc8553f8d4fb59862eb8f09f11, type: 2}
+  - {fileID: 11400000, guid: aa2a36932fa1c8f4f9cad1306d257f7a, type: 2}
+  - {fileID: 11400000, guid: f2182001c160e8c4c90ad2f2a7ede949, type: 2}
+  - {fileID: 11400000, guid: 69d8da8268a3be34fb82f508f66c4fc4, type: 2}
   - {fileID: 11400000, guid: 1d7379732bf4742498a9616adbffc413, type: 2}
+  - {fileID: 11400000, guid: 680cc469864af894bb1bbd9d29ab8b52, type: 2}
   prefabLieux: {fileID: 7223698307146068746, guid: f5fba248e5de0a949a0edc5f727c3262, type: 3}
   lLieux:
   - {fileID: 11400000, guid: 489555d1e594f194e975e5a6ae8a2ea6, type: 2}
