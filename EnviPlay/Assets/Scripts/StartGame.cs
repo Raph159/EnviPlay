@@ -66,7 +66,7 @@ public class CategorySelection : MonoBehaviour
             gameManager.prefab = prefabRandom;
             gameManager.selectionChoice = "random";
         }
-        SceneManager.LoadSceneAsync("InGame");
+        SceneManager.LoadSceneAsync("LimitScene");
     }
 
     public void OpenCreditScene()
