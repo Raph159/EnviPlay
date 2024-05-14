@@ -199,7 +199,7 @@ public class ButtonPress : MonoBehaviour
         else
         {
             textEndgame.text = "Fin de partie";
-            textEndgame.color = new Color32(255, 0, 0, 255);
+            textEndgame.color = new Color32(255, 81, 81, 255);
             endgame.SetActive(true);
         }
     }
