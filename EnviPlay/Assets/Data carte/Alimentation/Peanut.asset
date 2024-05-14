@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 940efdcbf3f60cc45b608c8457adb258, type: 3}
   m_Name: Peanut
   m_EditorClassIdentifier: 
-  nom: Peanut butter
+  nom: "Beurre de cacahu\xE8te"
   visuel: {fileID: 21300000, guid: 7c7e510d9e22aef438a64681b1a21111, type: 3}
   impactCO2: 2.5
