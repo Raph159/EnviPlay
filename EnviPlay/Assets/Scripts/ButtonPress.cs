@@ -64,7 +64,7 @@ public class ButtonPress : MonoBehaviour
         cartes.RemoveAt(index);
 
         //Set score à 0
-        scoreText.text = "Score: " + score.ToString();
+        scoreText.text = "Score : " + score.ToString();
     }
 
     void Update()
@@ -192,12 +192,14 @@ public class ButtonPress : MonoBehaviour
         TextMeshProUGUI textEndgame = endgame.GetComponent<TextMeshProUGUI>();
         if (win)
         {
-            textEndgame.text = "You win";
+            textEndgame.text = "Vous avez gagné";
+            textEndgame.color = new Color32(0, 255, 0, 255);
             endgame.SetActive(true);
         }
         else
         {
-            textEndgame.text = "Lose";
+            textEndgame.text = "Fin de partie";
+            textEndgame.color = new Color32(255, 0, 0, 255);
             endgame.SetActive(true);
         }
     }

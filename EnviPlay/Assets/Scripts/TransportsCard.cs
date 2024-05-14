@@ -7,6 +7,6 @@ public class TransportsCard : MonoBehaviour
 
     void Start()
     {
-        impactC02.text += " gCO2 / km et passager";
+        impactC02.text += " gCO2 / km par personne";
     }
 }
