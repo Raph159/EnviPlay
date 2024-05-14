@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 940efdcbf3f60cc45b608c8457adb258, type: 3}
   m_Name: Luxembourg
   m_EditorClassIdentifier: 
-  nom: Luxembourg
+  nom: Luxembourg 2021
   visuel: {fileID: 21300000, guid: dc6f3ba9d9ece91438dc9fc4712b296c, type: 3}
   impactCO2: 16.11

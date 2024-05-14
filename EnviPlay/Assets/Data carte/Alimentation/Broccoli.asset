@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 940efdcbf3f60cc45b608c8457adb258, type: 3}
   m_Name: Broccoli
   m_EditorClassIdentifier: 
-  nom: Broccoli
+  nom: Brocoli
   visuel: {fileID: 21300000, guid: 4c3af7d1aa0465343975fdf641c7eb60, type: 3}
   impactCO2: 2

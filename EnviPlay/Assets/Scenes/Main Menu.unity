@@ -360,7 +360,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Consommation
+  m_text: Alimentation
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -387,7 +387,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
+  m_fontSize: 27.6
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1202,12 +1202,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 60
+  m_fontSize: 50
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 60
+  m_fontSizeMax: 50
   m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
@@ -2411,7 +2411,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 347086eb0dfac784cba8698b83105fb2, type: 2}
   - {fileID: 11400000, guid: 10ee6e77a7ffb094ea085ee823597281, type: 2}
   - {fileID: 11400000, guid: b7b380bf7cde01c40b1bc20d42f5677c, type: 2}
-  prefabRandom: {fileID: 5081940164661753240, guid: 512044b2ba26730498d5ea97f6393a20, type: 3}
+  prefabRandom: {fileID: 3821418209540584009, guid: c60ddfbe8fa7ae040b6cc1ad69cbd702, type: 3}
   lRandom:
   - {fileID: 11400000, guid: 674124d07ae2b714c9cad2fc283e1d18, type: 2}
   - {fileID: 11400000, guid: fbd571331af905748a6bc6500df495bb, type: 2}
