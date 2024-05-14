@@ -73,4 +73,10 @@ public class CategorySelection : MonoBehaviour
     {
         SceneManager.LoadSceneAsync("CreditScene");
     }
+
+    public void OnApplicationQuit()
+    {
+        Application.Quit();
+    }
+    
 }
