@@ -37,7 +37,7 @@ public class ButtonPress : MonoBehaviour
     {
         //Etat de la partie
         distanceDeplacement = (Screen.width)/2;
-        vitesseDeplacement = distanceDeplacement/1.6f;
+        vitesseDeplacement = distanceDeplacement/1f;
 
         gameManager = FindObjectOfType<GameManager>();
         if (gameManager != null)
