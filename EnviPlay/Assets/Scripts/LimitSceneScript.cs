@@ -1,9 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class LimitSceneScript : MonoBehaviour
 {
@@ -23,13 +20,13 @@ public class LimitSceneScript : MonoBehaviour
         switch(gameManager.selectionChoice)
         {
             case "transport":
-                description.text = "Dans cette catégorie 'Transport', vous allez comparer différents modes de transport sur la base des émissions de gCO2 par individu en France. Ce calcul tient compte des émissions directes, ainsi que du cycle de vie des véhicules, de leur fabrication à leur démantèlement. Il prend également en compte la production et la distribution de carburant et d’électricité. Cependant, la construction d’infrastructures telles que les routes, les voies ferrées et les aéroports n’est pas incluse dans cette évaluation.";
+                description.text = "Dans cette catÃ©gorie 'Transport', vous allez comparer diffÃ©rents modes de transport sur la base des Ã©missions de gCO2 par individu en France. Ce calcul tient compte des Ã©missions directes, ainsi que du cycle de vie des vÃ©hicules, de leur fabrication Ã  leur dÃ©mantÃ¨lement. Il prend Ã©galement en compte la production et la distribution de carburant et d'Ã©lectricitÃ©. Cependant, la construction d'infrastructures telles que les routes, les voies ferrÃ©es et les aÃ©roports n'est pas incluse dans cette Ã©valuation.";
                 break;
             case "location":
-                description.text = "Dans cette catégorie ‘Lieux’, vous allez comparer les émissions de CO2 par habitant dans différents endroits tels que des villes, des pays, etc., pour une année spécifique.";
+                description.text = "Dans cette catÃ©gorie 'Lieux', vous allez comparer les Ã©missions de CO2 par habitant dans diffÃ©rents endroits tels que des villes, des pays, etc., pour une annÃ©e spÃ©cifique.";
                 break;
             case "random":
-                description.text = "Dans cette catégorie ‘Alimentation’, vous allez comparer des aliments connus comme étant des sources de protéines couramment utilisées. Les chiffres seront en kg de CO2 émis par kg d’aliment produit. Pour les animaux, seule la partie consommée est prise en compte dans le calcul, la carcasse est donc ignorée. Les chiffres sont en équivalent CO2 et prennent en compte toutes les étapes du processus de fabrication et tous les types de gaz à effet de serre.";
+                description.text = "Dans cette catÃ©gorie 'Alimentation', vous allez comparer des aliments connus comme Ã©tant des sources de protÃ©ines couramment utilisÃ©es. Les chiffres seront en kg de CO2 Ã©mis par kg d'aliment produit. Pour les animaux, seule la partie consommÃ©e est prise en compte dans le calcul, la carcasse est donc ignorÃ©e. Les chiffres sont en Ã©quivalent CO2 et prennent en compte toutes les Ã©tapes du processus de fabrication et tous les types de gaz Ã  effet de serre.";
                 break;
         }
     }

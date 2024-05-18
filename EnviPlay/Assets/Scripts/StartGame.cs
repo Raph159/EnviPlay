@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
-using UnityEditor;
+
 
 public class CategorySelection : MonoBehaviour
 {
@@ -47,7 +47,6 @@ public class CategorySelection : MonoBehaviour
     private void StartGame(bool transport, bool location, bool random)
     {
         // Faire quelque chose avec les catégories sélectionnées, comme charger les questions correspondantes
-        Debug.Log("Démarre la partie avec les catégories sélectionnées : Transport = " + transport + ", Lieux = " + location + ", Aléatoire = " + random);
         if (transport)
         {
             gameManager.selectedQuestions = lTransport;

@@ -73,10 +73,9 @@ public class ButtonPress : MonoBehaviour
         {
             if (carte2.GetComponent<Card>().GetImpactC02() >= carte1.GetComponent<Card>().GetImpactC02())
             {
-                if (cartes.Count == 0 && derniereCarte)
+                if (derniereCarte)
                 {
                     actuScore();
-                    Debug.Log("You win the game");
                     EndGame(true);
                     plus = false;
                 }
@@ -87,7 +86,6 @@ public class ButtonPress : MonoBehaviour
             }
             else
             {
-                Debug.Log("You Lose");
                 EndGame(false);
                 plus = false;
             }
@@ -96,10 +94,9 @@ public class ButtonPress : MonoBehaviour
         {
             if (carte2.GetComponent<Card>().GetImpactC02() <= carte1.GetComponent<Card>().GetImpactC02())
             {
-                if (cartes.Count == 0 && derniereCarte)
+                if (derniereCarte)
                 {
                     actuScore();
-                    Debug.Log("You win the game");
                     EndGame(true);
                     moins = false;
                 }
@@ -110,7 +107,6 @@ public class ButtonPress : MonoBehaviour
             }
             else
             {
-                Debug.Log("You Lose");
                 EndGame(false);
                 moins = false;
             }
@@ -123,7 +119,6 @@ public class ButtonPress : MonoBehaviour
         {
             carte2.transform.GetChild(2).gameObject.SetActive(true);
             DesacButton();
-            Debug.Log("Bien vu");
             CreationCarte3();
             carte33Cree = true;
         }
